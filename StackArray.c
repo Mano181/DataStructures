@@ -2,21 +2,24 @@
 int top,value,size;
 int stack[10];
 top=-1;
-size=1;
+size=3;
 void push(int value)
 {
-    if(top>size)
-        printf("stack Overflow");
+
+    if(top>=size)
+        printf("stack Overflow\n");
     else
     {
-        stack[++top]=value;
+        ++top;
+        stack[top]=value;
         printf("%d is pushed into stack\n",value);
     }
+
 }
 void pop()
 {
     if(top<0)
-        printf("stack underflow");
+        printf("stack underflow\n");
     else
     {
         --top;
@@ -39,7 +42,8 @@ int main()
     push(30);
     pop();
     display();
-    push(40);
+    push(50);
+    push(60);
     display();
 
 }
