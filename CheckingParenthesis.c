@@ -16,11 +16,11 @@ int empty(){
     if(top==-1)
         return 1;  //1-> stack empty
     else
-        return 0;  //0-> stack is not empty
+        return 0;  //0-> stack is not empty//(a+b)*(c+d)
 }
 int main()
 {
-    char str[10];
+    char str[20];
     scanf("%s",str);
     for(int ind=0;str[ind]!='\0';ind++)
     {
@@ -29,6 +29,8 @@ int main()
                         push(str[ind]);
         else if((stack[top]=='('&&str[ind]==')')||(stack[top]=='{'&&str[ind]=='}')||(stack[top]=='['&&str[ind]==']'))
                         pop();
+        else if(('a'<=str[ind]&&str[ind]<='z')||('A'<=str[ind]&&str[ind]<='Z')||str[ind]=='+'||'-'||'*'||'/')
+            continue;
         else
         {
             printf("Invalid");
